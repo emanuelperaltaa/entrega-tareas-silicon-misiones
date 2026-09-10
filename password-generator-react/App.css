@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #1a1a1a;
+  font-family: system-ui, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #f0f0f0;
+}
+
+.app h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.tarjeta {
+  background: #2a2a2a;
+  border-radius: 14px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.visor {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.visor-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 1.1rem;
+  font-family: monospace;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #e6e639;
+}
+
+.btn-copiar {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+.btn-copiar:hover {
+  background: #3d3d3d;
+}
+
+.copiado-msg {
+  position: absolute;
+  top: -22px;
+  right: 0;
+  font-size: 0.8rem;
+  color: #7ee787;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fila-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fila-slider span:first-child {
+  min-width: 70px;
+  color: #bbb;
+}
+
+.longitud-numero {
+  font-size: 1.4rem;
+  font-weight: bold;
+  min-width: 28px;
+  text-align: right;
+}
+
+.fila-slider input[type="range"] {
+  flex: 1;
+  accent-color: #cdea3d;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.opcion input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #cdea3d;
+}
+
+.fortaleza {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #bbb;
+  border-top: 1px solid #3a3a3a;
+  padding-top: 10px;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.btn-generar {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #cdea3d;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-generar:hover {
+  background: #dbf25a;
+}
+
+.btn-generar:active {
+  transform: scale(0.98);
+}
