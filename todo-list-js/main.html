@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <style>
+    body {
+      font-family: serif;
+      margin: 20px;
+      color: #000;
+    }
+    textarea {
+      width: 400px;
+      height: 80px;
+      font-family: monospace;
+      padding: 5px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .options {
+      margin-bottom: 15px;
+    }
+    .options label {
+      margin-right: 15px;
+    }
+    .metric-title {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .metric-value {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Character Counter</h3>
+
+  <button id="themeToggle">Light</button>
+
+  <h1>Analyze your text in real time</h1>
+
+  <textarea id="textInput" placeholder="Escribe tu texto aquí...">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+
+  <div class="options">
+    <label>
+      <input type="checkbox" id="excludeSpaces"> Exclude spaces
+    </label>
+    <label>
+      <input type="checkbox" id="limitChars"> Set Character Limit
+    </label>
+  </div>
+
+  <p class="metric-title">Aprox reading time: <span id="readingTime">00</span></p>
+
+  <p class="metric-title">Total Characters</p>
+  <p class="metric-value" id="charCount">00</p>
+
+  <p class="metric-title">Word Count</p>
+  <p class="metric-value" id="wordCount">00</p>
+
+  <p class="metric-title">Sentence Count</p>
+  <p class="metric-value" id="sentenceCount">00</p>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const excludeSpaces = document.getElementById('excludeSpaces');
+    
+    const charCountEl = document.getElementById('charCount');
+    const wordCountEl = document.getElementById('wordCount');
+    const sentenceCountEl = document.getElementById('sentenceCount');
+    const readingTimeEl = document.getElementById('readingTime');
+
+    function updateStats() {
+      let text = textInput.value;
+
+      // Conteo de caracteres
+      let charText = excludeSpaces.checked ? text.replace(/\s/g, '') : text;
+      charCountEl.textContent = charText.length.toString().padStart(2, '0');
+
+      // Conteo de palabras
+      const words = text.trim().split(/\s+/).filter(w => w.length > 0);
+      wordCountEl.textContent = words.length.toString().padStart(2, '0');
+
+      // Conteo de oraciones
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+      sentenceCountEl.textContent = sentences.length.toString().padStart(2, '0');
+
+      // Tiempo estimado de lectura (promedio de 200 palabras por minuto)
+      const minutes = Math.ceil(words.length / 200);
+      readingTimeEl.textContent = words.length === 0 ? "00" : `${minutes} min`;
+    }
+
+    textInput.addEventListener('input', updateStats);
+    excludeSpaces.addEventListener('change', updateStats);
+
+    // Inicializar valores al cargar
+    updateStats();
+  </script>
+
+</body>
+</html>
