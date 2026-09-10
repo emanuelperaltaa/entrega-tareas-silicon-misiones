@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Character Counter</h1>
+
+    <textarea id="texto" placeholder="Escribí algo acá..."></textarea>
+
+    <div class="progreso">
+      <div id="barraProgreso" class="progreso-relleno"></div>
+    </div>
+
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span id="caracteres">0</span>
+        <p>Caracteres</p>
+      </div>
+      <div class="tarjeta">
+        <span id="palabras">0</span>
+        <p>Palabras</p>
+      </div>
+      <div class="tarjeta">
+        <span id="sinEspacios">0</span>
+        <p>Sin espacios</p>
+      </div>
+      <div class="tarjeta">
+        <span id="restantes">280</span>
+        <p>Restan</p>
+      </div>
+    </div>
+
+    <button id="btnLimpiar">Limpiar</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
